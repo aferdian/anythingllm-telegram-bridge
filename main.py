@@ -8,7 +8,8 @@ TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 ANYTHINGLLM_API_KEY = os.getenv("ANYTHINGLLM_API_KEY")
 WORKSPACE_SLUG = os.getenv("WORKSPACE_SLUG")
 
-ANYTHINGLLM_URL = f"https://allm.amazingmalang.net/api/v1/workspace/{WORKSPACE_SLUG}/chat"
+ANYTHINGLLM_BASE_URL = os.getenv("ANYTHINGLLM_BASE_URL")
+ANYTHINGLLM_URL = f"{ANYTHINGLLM_BASE_URL}/api/v1/workspace/{WORKSPACE_SLUG}/chat"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Connected to the Knowledge Base. Ask me anything.")
